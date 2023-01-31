@@ -1,0 +1,229 @@
+.button {
+    font-family: $body-font;
+    appearance: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    transition: $transition-1;
+    outline: none;
+    cursor: pointer;
+
+    &__action {
+        height: 20px;
+
+        &_loading {
+            top: 2px;
+            position: relative;
+        }
+    }
+
+    &_inline {
+        display: inline-flex;
+    }
+
+    &__icon {
+        display: inline-flex;
+        margin-right: 18px;
+        height: 20px;
+
+        &_icon-only {
+            margin-right: 0;
+        }
+
+        svg,
+        path {
+            transition: $transition-1;
+        }
+    }
+
+    &_icon-only {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    &_loading {
+        background: $primary !important;
+
+        path {
+            fill: $white !important;
+        }
+    }
+
+    &_success {
+        background: $success !important;
+        border-color: $success !important;
+
+        path {
+            fill: $white !important;
+        }
+    }
+
+    &_size {
+        &_small {
+            height: 32px;
+            font-size: $font-size-xs;
+            line-height: 140%;
+
+            svg {
+                height: 16px;
+                width: 16px;
+            }
+        }
+
+        &_medium {
+            height: 40px;
+            font-weight: 500;
+            font-size: $font-size-sm;
+            line-height: 140%;
+        }
+
+        &_large {
+            height: 52px;
+            font-weight: bold;
+            font-size: $font-size-sm;
+            line-height: 140%;
+        }
+    }
+
+    &_width {
+        &_default {
+            padding: $padding-micro $padding-medium;
+            min-width: 150px;
+        }
+
+        &_auto {
+            width: unset;
+            padding: 0 $padding-default;
+        }
+        &_full {
+            width: 100%;
+        }
+    }
+
+    &_radius {
+        &_micro {
+            border-radius: $br-micro;
+        }
+
+        &_small {
+            border-radius: $br-sm;
+        }
+
+        &_medium {
+            border-radius: $br-md;
+        }
+    }
+
+    &_theme {
+        &_white {
+            color: $primary;
+            background: $white;
+            border: 2px solid #ebedf1;
+
+            &:hover {
+                border-color: $primary;
+            }
+        }
+
+        &_primary {
+            color: $white;
+            background: $primary;
+
+            &:hover {
+                background: #4654b2;
+            }
+
+            &-ghost {
+                border-color: $primary;
+                color: $primary;
+                background: $white;
+
+                &:disabled {
+                    border-color: $disabled-dark;
+                }
+
+                &:hover {
+                    background: $primary;
+                    color: $white;
+                }
+            }
+        }
+
+        &_peach {
+            background: $peach;
+            color: $darkest !important;
+
+            &:hover {
+                background: darken($peach, 10%);
+            }
+        }
+
+        &_danger {
+            background: $error;
+            color: $white;
+
+            path {
+                fill: $white;
+            }
+
+            &:hover {
+                background: $error-dark;
+            }
+        }
+
+        &_success {
+            color: $white;
+            background: $success;
+
+            &:hover {
+                background: $success;
+                box-shadow: $shadow-2;
+            }
+
+            &-light {
+                background: $success-light;
+                color: $success;
+
+                &:hover {
+                    background: $success;
+                    color: $white;
+                }
+            }
+        }
+
+        &_default {
+            color: $darker;
+            background: $white;
+
+            &:hover {
+                background: $quick-silver;
+            }
+        }
+
+        &_text {
+            color: $darker;
+            background: unset;
+            height: unset;
+            min-width: unset;
+            width: unset;
+            padding: 0;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    &:disabled {
+        color: $disabled-dark;
+        cursor: not-allowed;
+        background: $disabled;
+
+        path {
+            fill: $disabled-dark;
+        }
+    }
+}

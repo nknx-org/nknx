@@ -1,0 +1,144 @@
+.news {
+    overflow: hidden;
+    position: relative;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 32px;
+    }
+
+    &__icon {
+        height: 22px;
+        width: 22px;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @include size-md {
+            position: relative;
+            padding-top: 0;
+        }
+    }
+
+    &__pages {
+        font-size: 13px;
+        color: $text-grey-light;
+    }
+
+    &__buttons {
+        display: flex;
+    }
+
+    &__button {
+        margin-left: 5px;
+        padding: 14px;
+        background: $ghost-white;
+        cursor: pointer;
+        transition: $transition-1;
+        border-radius: $card-border-radius;
+
+        &:hover {
+            background: $platinum;
+        }
+    }
+
+    .news-item {
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: $font-size-xs;
+            color: $text-grey-light;
+        }
+
+        &__title {
+            margin-top: 8px;
+            margin-bottom: 16px;
+            font-size: $font-size-md;
+            font-weight: $font-weight-bold;
+
+            @include size-md {
+                font-size: $font-size-base;
+                line-height: 19px;
+                font-weight: $font-weight-semi-bold;
+            }
+        }
+
+        &__content {
+            font-size: 13px;
+            line-height: 16px;
+            color: $text-grey-light;
+            margin-bottom: 12px;
+            min-height: 48px;
+
+            @include size-md {
+                min-height: auto;
+            }
+        }
+
+        &__more {
+            color: $primary;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+
+            @include size-md {
+                font-size: 13px;
+                line-height: 16px;
+            }
+
+            svg {
+                left: 8px;
+                height: 8px;
+                position: relative;
+                transition: $transition-1;
+            }
+
+            &:hover {
+                svg {
+                    left: 18px;
+                }
+            }
+        }
+
+        &__divider {
+            width: 100%;
+            background-color: $platinum;
+            height: 1px;
+            margin: $padding-normal 0px;
+        }
+    }
+}
+
+// News page animation
+.fade-out-in-enter-active,
+.fade-out-in-leave-active {
+    transition: transform 0.2s;
+
+    @include size-md {
+        transition: transform 0s;
+    }
+}
+
+.fade-out-in-enter-active {
+    transition-delay: 0.2s;
+
+    @include size-md {
+        transition-delay: 0s;
+    }
+}
+
+.fade-out-in-enter,
+.fade-out-in-leave-to {
+    transform: translateX(150%);
+
+    @include size-md {
+        transform: translateX(0%);
+    }
+}

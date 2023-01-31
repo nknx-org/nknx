@@ -1,0 +1,119 @@
+.notifications-button {
+    position: relative;
+
+    &__dropdown {
+        border: $card-border;
+        background: $white;
+        position: absolute;
+        left: $nav-width-collapsed;
+        min-width: 280px;
+        left: 42px;
+        top: -12px;
+        border-radius: $br-sm;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: $font-size-sm;
+            padding: $padding-default;
+        }
+
+        &-title {
+            font-weight: 500;
+        }
+
+        &-all {
+            cursor: pointer;
+            color: $primary;
+            transition: $transition-1;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        &-content {
+            font-size: $font-size-xs;
+        }
+
+        &-item {
+            padding: $padding-default;
+            transition: $transition-1;
+            cursor: pointer;
+
+            &:hover {
+                background: $primary-ghost;
+            }
+        }
+    }
+
+    &__icon {
+        height: 24px;
+        cursor: pointer;
+
+        path {
+            transition: $transition-1;
+        }
+    }
+
+    &:hover {
+        .notifications-button__icon {
+            animation: ring 1s ease-in-out;
+            transform-origin: 50% 4px;
+
+            path {
+                fill: $primary;
+            }
+        }
+    }
+
+    &__badge {
+        position: absolute;
+        right: -8px;
+        top: -10px;
+        font-size: 12px;
+        color: #fff;
+        background: $error;
+        padding: 2px 8px;
+        border-radius: 100em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+}
+
+@keyframes ring {
+    0% {
+        transform: rotatez(0deg);
+    }
+
+    25% {
+        transform: rotatez(0deg);
+    }
+
+    32% {
+        transform: rotatez(-5deg);
+    }
+
+    47% {
+        transform: rotatez(5deg);
+    }
+
+    65% {
+        transform: rotatez(-5deg);
+    }
+
+    75% {
+        transform: rotatez(5deg);
+    }
+
+    83% {
+        transform: rotatez(0deg);
+    }
+
+    100% {
+        transform: rotatez(0deg);
+    }
+}

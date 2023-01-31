@@ -1,0 +1,14 @@
+.stripe {
+    &__card {
+        box-sizing: border-box;
+        border: $card-border;
+        border-radius: $br-sm;
+        padding: $padding-xs $padding-default;
+        height: 52px;
+        margin-top: 9px;
+
+        .StripeElement {
+            margin-top: 9px;
+        }
+    }
+}

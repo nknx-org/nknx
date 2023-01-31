@@ -1,0 +1,104 @@
+.select {
+    position: relative;
+    border-radius: $br-sm;
+    transition: $transition-1;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    width: 100%;
+
+    &__title {
+        letter-spacing: 0.06em;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: none;
+    }
+
+    &__toggle {
+        transition: $transition-1;
+        height: 16px;
+        width: 16px;
+
+        &_open {
+            transform: scaleY(-1);
+
+            path {
+                fill: $primary;
+            }
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        border: $card-border;
+        border-radius: $br-sm;
+        padding: $padding-default;
+        transition: $transition-1;
+        font-size: $font-size-xs;
+        line-height: 140%;
+        height: 52px;
+
+        &_active {
+            border-color: $primary;
+        }
+    }
+
+    &__value {
+        flex: 1;
+    }
+
+    &__list {
+        overflow-y: auto;
+        max-height: 170px;
+        z-index: 4;
+        width: 100%;
+        position: absolute;
+        background: $white;
+        box-shadow: $shadow-3;
+        border-radius: $br-md;
+        padding: 12px $padding-default;
+        box-sizing: border-box;
+        transform: translate3d(0, -8px, 0);
+        opacity: 0;
+        transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out,
+            width 0.2s ease-in-out, height 0.2s ease-in-out;
+        pointer-events: none;
+
+        &_position {
+            &_bottom {
+                top: calc(46px + #{$padding-default});
+            }
+
+            &_top {
+                bottom: calc(32px + #{$padding-default});
+            }
+        }
+
+        &_open {
+            transform: translate3d(0%, 0, 0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &__item {
+        padding: 4px 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: $transition-1;
+        font-size: 14px;
+        line-height: 24px;
+
+        &:not(:last-child) {
+            margin-bottom: $padding-xs;
+        }
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}

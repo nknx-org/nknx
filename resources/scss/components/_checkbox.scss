@@ -1,0 +1,84 @@
+.checkbox {
+    position: relative;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    width: unset;
+    flex-shrink: 0;
+    margin-bottom: $padding-default;
+
+    &_divider {
+        margin: $padding-default 0;
+    }
+
+    &__title {
+        margin-left: calc(20px + #{$padding-xs});
+        font-size: $font-size-sm;
+        line-height: 140%;
+        font-weight: $font-weight-semi-bold;
+    }
+
+    &__control {
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+        z-index: 1;
+        left: 0;
+        cursor: pointer;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        margin: 0;
+
+        &:checked + label {
+            background: $primary;
+
+            &::after {
+                opacity: 1;
+            }
+        }
+        &:disabled + label {
+            background: rgba(117, 121, 129, 0.2);
+        }
+    }
+
+    &__label {
+        background-color: $primary-light;
+        box-sizing: border-box;
+        border: 1px solid rgba(75, 77, 237, 0.2);
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        transition: $transition-1;
+        border-radius: 100%;
+
+        &::after {
+            transition: $transition-1;
+            border: 2px solid $white;
+            border-top: none;
+            border-right: none;
+            content: "";
+            height: 5px;
+            left: 4px;
+            opacity: 0;
+            position: absolute;
+            top: 5px;
+            transform: rotate(-45deg);
+            width: 10px;
+        }
+
+        &_theme {
+            &_success {
+                background-color: $success-ghost;
+                border-color: $success-semi-ghost;
+
+                &::after {
+                    border-color: $success;
+                }
+            }
+        }
+    }
+}

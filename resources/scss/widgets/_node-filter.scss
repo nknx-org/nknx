@@ -1,0 +1,54 @@
+.node-filter {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: auto;
+
+    &__item {
+        padding: $padding-normal;
+        font-size: $font-size-sm;
+        line-height: 19px;
+        color: $text-grey-light;
+        cursor: pointer;
+        transition: $transition-1;
+        text-align: center;
+        white-space: nowrap;
+        position: relative;
+
+        @include size-md {
+            padding: 20px $padding-default;
+            font-size: 14px;
+            line-height: 17px;
+            display: block;
+        }
+
+        &_active {
+            color: $darker;
+
+            &:after {
+                content: "";
+                display: flex;
+                width: 100%;
+                height: 4px;
+                background-color: $primary;
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                transition: $transition-1;
+                border-radius: $card-border-radius;
+            }
+
+            @include size-md {
+                font-weight: $font-weight-bold;
+            }
+        }
+
+        &:hover {
+            color: $darker;
+        }
+
+        &:active {
+            color: $primary !important;
+        }
+    }
+}

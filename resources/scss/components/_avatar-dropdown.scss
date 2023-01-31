@@ -1,0 +1,119 @@
+.avatar-dropdown {
+    z-index: 10;
+    position: relative;
+
+    &__avatar {
+        height: 48px;
+        width: 48px;
+        border-radius: 100em;
+        background: $primary-light;
+        border: 1px solid transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        color: $primary;
+        transition: $transition-1;
+
+        &:hover {
+            background: rgba(87, 105, 223, 0.2);
+            border-color: #5769df;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        margin-left: 5px;
+        font-size: 1.25em;
+        color: $quick-silver;
+        transition: $transition-1;
+
+        &_active {
+            transform: scaleY(-1);
+        }
+    }
+
+    &__menu {
+        min-width: 136px;
+        position: absolute;
+        left: 0;
+        bottom: 54px;
+        box-shadow: $shadow-3;
+        border-radius: $br-md;
+        padding: 12px $padding-default;
+        box-sizing: border-box;
+        background: $white;
+        list-style-type: none;
+
+        @include size-md {
+            bottom: unset;
+            right: -5px;
+        }
+
+        li {
+            list-style-type: none;
+            transition: $transition-1;
+
+            &:not(:last-child) {
+                margin-bottom: $padding-xs;
+            }
+        }
+    }
+
+    &__dd-link {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: $transition-1;
+        color: $grey;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+.slide-fade-enter-active {
+    transition: all 0.3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.2s ease;
+}
+
+.slide-fade-enter {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+.slide-fade-leave-to {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+@keyframes bounceIn {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}

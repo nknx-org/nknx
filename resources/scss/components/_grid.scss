@@ -1,0 +1,14 @@
+.grid {
+    display: grid;
+    grid-gap: $grid-gap;
+    grid-template-columns: $grid-template-columns;
+
+    @include size-md {
+        grid-gap: $padding-default;
+    }
+
+    &_custom-height {
+        height: auto;
+        align-items: flex-start;
+    }
+}

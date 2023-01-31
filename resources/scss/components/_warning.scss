@@ -1,0 +1,60 @@
+.warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    grid-column: span 6;
+    height: 24px;
+    background: $base;
+    color: $violet;
+    border-radius: $br-sm;
+
+    &_state {
+        &_error {
+            color: $error;
+            background: $error-ghost;
+        }
+
+        &_success {
+            color: $success;
+            background: $success-ghost;
+        }
+
+        &_primary {
+            color: $primary;
+            background: $primary-ghost;
+        }
+    }
+
+    &__icon {
+        margin-right: $padding-xs;
+        width: 16px;
+        height: 16px;
+
+        &_state {
+            &_error {
+                path {
+                    fill: $error;
+                }
+            }
+
+            &_success {
+                path {
+                    fill: $success;
+                }
+            }
+
+            &_primary {
+                path {
+                    fill: $primary;
+                }
+            }
+        }
+    }
+
+    &__text {
+        font-weight: $font-weight-semi-bold;
+        font-size: $font-size-xxs;
+        line-height: 140%;
+    }
+}

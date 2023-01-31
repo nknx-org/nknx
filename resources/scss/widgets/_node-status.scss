@@ -1,0 +1,52 @@
+.node-status {
+    display: flex;
+    align-items: center;
+
+    @include size-md {
+        font-size: $font-size-xs;
+    }
+
+    @include size-xss {
+        font-size: 10px;
+    }
+
+    &_state {
+        &_mining {
+            color: $success;
+        }
+
+        &_pruning {
+            color: $pink;
+        }
+
+        &_warning {
+            color: $orange;
+        }
+
+        &_waitSync {
+            color: $royal-blue-lighter;
+        }
+
+        &_syncStarted {
+            color: $royal-blue;
+        }
+
+        &_syncFinished {
+            color: $royal-blue-darker;
+        }
+
+        &_offline {
+            color: $quick-silver;
+        }
+
+        &_error {
+            color: $error;
+        }
+    }
+
+    &__icon {
+        margin-right: $padding-xs;
+        font-size: 16px;
+        position: relative;
+    }
+}

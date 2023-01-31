@@ -1,0 +1,243 @@
+/*========== Custom Variable ==========*/
+
+// App Global Font Size
+$html-font-size: 16px;
+
+// Media Size
+$desktop-size-xs: 320px;
+$desktop-size-xss: 374px;
+$desktop-size-sm: 600px;
+$desktop-size-md: 960px;
+$desktop-size-lg: 1200px;
+$desktop-size-llg: 1440px;
+$desktop-size-xl: 1900px;
+
+//Default Colors
+$white: #fff;
+$black: #000;
+$base: #f5f5fa;
+
+//Primary Colors
+$royal-blue: #5769df;
+$royal-blue-lighter: #7987e5;
+$royal-blue-darker: #4654b2;
+
+//Alert Colors
+$mountain-meadow: #2bd289;
+$jasper: #d63649;
+$blush: #dd5e89;
+$orange: #f4a271;
+$yellow: #f4d94f;
+
+//Neutral Colors
+$ghost-white: #f8f8fb;
+$platinum: #e1e1ed;
+$quick-silver: #a2a5b9;
+$darker: #242628;
+$darkest: #12022f;
+
+// Ghost colors
+$primary-ghost: #eef0fc;
+$success-ghost: #e5f9f0;
+$blush-ghost: #fff4f8;
+$orange-ghost: #fdefe6;
+
+//Theme colors
+$primary: $royal-blue !default;
+$primary-light: rgba($royal-blue, 0.1) !default;
+$secondary: $royal-blue-lighter !default;
+$primary-dark: $royal-blue-darker;
+$success: #5ce2b2;
+$success-light: rgba($success, 0.05);
+$success-semi-ghost: rgba($success, 0.2);
+$success-ghost: rgba($success, 0.1);
+$error: $jasper !default;
+$error-ghost: rgba($error, 0.05);
+$error-dark: #b42536 !default;
+$error-light: $blush !default;
+$grey: #757981;
+$grey-light: rgba($grey, 0.3);
+$grey-dark: #414348;
+$disabled: rgba($grey, 0.1);
+$disabled-dark: $grey-dark;
+$violet: #3d3ea2;
+$violet-light: #f7f1fe;
+$peach: #ffdda9;
+$pink: #b57bff;
+
+//App Theme Color
+$theme-colors: () !default;
+$theme-colors: map-merge(
+    (
+        "primary": $primary,
+        "secondary": $secondary,
+        "primary-dark": $primary-dark,
+        "success": $success,
+        "error": $error,
+        "error-light": $error-light
+    ),
+    $theme-colors
+);
+
+// Setting for the Typography elements.
+$font-size-xxs: 0.625rem !default; // 10px
+$font-size-xs: 0.75rem !default; // 12px
+$font-size-sm: 0.875rem !default; // 14px
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-widget: 1.0625rem !default; // 17px
+$font-size-md: 1.125rem !default; // 18x
+$font-size-lg: 1.25rem !default; // 20px
+$font-size-title: 1.75rem !default; // 24px
+$font-size-llg: 2.125rem !default; //34px
+$font-size-max: 4rem !default; // 64px
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 500;
+$font-weight-bold: 600;
+
+// App Text Scale
+$text-grey-light: $quick-silver;
+$text-grey-darker: $darker;
+$text-grey-darkest: $darkest;
+$text-dark: #594d6d;
+
+// Setting For Heading Element
+$h1-font-size: $font-size-title !default; // 28px
+$h2-font-size: $font-size-lg !default; // 20px
+$h3-font-size: $font-size-widget !default; // 17px
+
+//Shadows
+$shadow-1: 2px 4px 8px rgba(223, 224, 226, 0.12);
+$shadow-2: 2px 6px 18px rgba(9, 14, 47, 0.16);
+$shadow-3: 0px 6px 24px rgba(0, 0, 0, 0.12);
+
+// Gradient Theme Color
+$primary-gradient: linear-gradient(
+    172.89deg,
+    $royal-blue 24.12%,
+    #5fcff9 102.64%
+);
+$primary-gradient-2: linear-gradient(99.95deg, $primary 0.78%, #9f30e2 100.4%);
+$primary-gradient-3: linear-gradient(99.95deg, $primary 0.78%, #9f30e2 100.4%);
+$orange-gradient: linear-gradient(90deg, $blush 0.24%, #f7bb97 97.08%);
+$error-gradient: linear-gradient(114.68deg, $jasper 3.09%, #e33961 98.24%);
+$green-gradient: linear-gradient(
+    118.17deg,
+    $mountain-meadow 2.8%,
+    #22c2a6 84.22%
+);
+$dark-gradient: linear-gradient(
+        161.03deg,
+        rgba(0, 0, 0, 0.6) 1.31%,
+        rgba(0, 0, 0, 0.2) 98.29%
+    ),
+    $primary;
+$success-gradient: linear-gradient(118.17deg, #61e786 2.8%, #2ccb96 84.22%);
+
+// Transitions
+$transition-1: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+$transition-2: 2s linear infinite;
+$transition-3: 0.4s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+
+// Settings for the `<body>` element.
+$body-bg: $base;
+$body-color: $text-grey-darker;
+$body-font: "Inter", Arial;
+$landing-font: "DM Sans", sans-serif;
+
+// App Spacing
+$padding-xxs: 4px;
+$padding-xs: 8px;
+$padding-micro: 12px;
+$padding-small: 14px;
+$padding-default: 16px;
+$padding-normal: 24px;
+$padding-medium: 40px;
+$padding-big: 52px;
+$padding-max: 64px;
+
+$br-micro: 4px;
+$br-sm: 8px;
+$br-md: 12px;
+$br-big: 32px;
+
+// App Custom Card
+$card-bg-default: $white;
+$card-bg-primary: $primary-gradient;
+$card-bg-success: $green-gradient;
+$card-bg-error: $error-gradient;
+$card-border-radius: $br-md;
+$card-shadow: $shadow-1;
+$card-border: 1px solid #ebedf1;
+
+// Top bar
+$topbar-height: 32px;
+
+// Header bar
+$headerbar-height: 72px;
+$headerbar-button-size: 24px;
+$headerbar-search-width: 500px;
+
+// Navigation
+$nav-width-collapsed: 104px;
+$nav-width-expanded: 264px;
+$nav-font-size: $font-size-md;
+$nav-color-default: $text-grey-light;
+$nav-color-active: $primary;
+$nav-weight-active: $font-weight-semi-bold;
+$nav-item-height: 64px;
+$nav-icon-size: 24px;
+$nav-marker-border-radius: 7px;
+
+// Grid
+$grid-template-columns: repeat(12, 1fr);
+$grid-gap: 32px;
+
+// Sparkline-stats
+$sparkline-chart-height: 120px;
+
+// Data Table
+$table-fz: $font-size-sm;
+$table-header-padding: $padding-micro $padding-normal;
+$table-header-bg: $ghost-white;
+$table-header-color: $text-grey-light;
+$table-item-link-color: $primary;
+$table-item-padding: $padding-small $padding-normal;
+$table-row-offline: $ghost-white;
+
+// Switcher
+$switcher-padding: $padding-normal;
+$switcher-fz: $font-size-md;
+$switcher-color: $text-grey-light;
+$switcher-active-color: $text-grey-darker;
+$switcher-marker-color: $primary;
+$switcher-marker-height: 4px;
+$switcher-marker-width: 180px;
+$switcher-marker-br: 7px;
+
+// Wallet Panel
+$walletpanel-bg: linear-gradient(
+    96.13deg,
+    #f4a271 0.12%,
+    #b35deb 55.06%,
+    #5769df 99.44%
+);
+$walletpanel-color: $white;
+$walletpanel-btn-bg: rgba(0, 0, 0, 0.15);
+$walletpanel-btn-hover-bg: rgba(0, 0, 0, 0.3);
+$walletpanel-btn-active-bg: rgba(0, 0, 0, 0.5);
+$walletpanel-btn-width: 140px;
+$walletpanel-btn-more-width: 40px;
+$walletpanel-icon-size: 24px;
+
+// Wallet Side
+$wallet-side-bg: $dark-gradient;
+$wallet-side-color: $white;
+
+// Wallet Preview
+$wallet-preview-br: 0px 10px 10px 0px;
+$wallet-preview-bg-focus: rgba(121, 135, 229, 0.4);
+$wallet-preview-bg-active: rgba(121, 135, 229, 0.3);
+$wallet-preview-bg-hover: rgba(121, 135, 229, 0.1);
+$wallet-preview-chart-width: 180px;

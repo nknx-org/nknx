@@ -1,0 +1,12 @@
+.content-wrapper {
+    padding: 40px 80px;
+
+    @include size-md {
+      flex-flow: row wrap;
+      padding: $padding-normal $padding-default;
+    }
+
+    &_centered {
+      margin: 0 auto;
+    }
+  }

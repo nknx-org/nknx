@@ -1,0 +1,71 @@
+.navigation {
+    grid-column: span 6;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: $padding-xs;
+    margin-bottom: $padding-normal;
+
+    &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: $platinum;
+    }
+
+    &__item {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: $font-size-widget;
+        color: lighten($darker, 50%);
+        line-height: 22px;
+        transition: $transition-1;
+        flex-shrink: 0;
+        position: relative;
+
+        &:after {
+            transition: $transition-1;
+            content: "";
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            left: 0;
+            bottom: -8px;
+            background: $primary;
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+
+        &_active {
+            border-color: $primary;
+            color: $darker;
+
+            &:after {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            path {
+                fill: $darker !important;
+            }
+        }
+
+        &:hover {
+            border-color: $primary;
+            color: $darker;
+        }
+    }
+}

@@ -1,0 +1,137 @@
+.sidebar {
+    box-sizing: border-box;
+    background-color: white;
+    width: $nav-width-collapsed;
+    top: 0;
+    height: 100%;
+    transition: $transition-1;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 998;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 48px;
+
+    &__logo {
+        width: 40px;
+        height: auto;
+        margin-bottom: 92px;
+        flex-shrink: 0;
+
+        @include size-md {
+            display: none;
+        }
+    }
+
+    &__nav {
+        flex: 1;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__subscription {
+        padding: 4px 8px;
+        border: 1px solid $pink;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 16px;
+        color: $pink;
+    }
+
+    @include size-md {
+        width: 74px;
+        transform: translateX(-100%);
+        top: calc(#{$headerbar-height} + 4px);
+        justify-content: flex-start;
+        padding-top: $padding-medium;
+        box-shadow: $shadow-1;
+        border-right: $card-border;
+
+        &_expanded {
+            transform: translateX(0);
+        }
+    }
+
+    &_topbar {
+        top: calc(#{$headerbar-height} + 143px + 1px);
+    }
+
+    &__marker {
+        height: $nav-item-height;
+        width: 4px;
+        background-color: $nav-color-active;
+        position: absolute;
+        right: 0px;
+        transition: $transition-1;
+        border-radius: $nav-marker-border-radius;
+
+        &_hidden {
+            height: 0;
+            opacity: 0;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        transition: $transition-1;
+
+        path {
+            fill: #a2a5b9;
+            transition: $transition-1;
+        }
+    }
+
+    &__avatar {
+        margin-top: 32px;
+
+        @include size-md {
+            display: none;
+        }
+    }
+
+    &__item {
+        text-decoration: none;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        cursor: pointer;
+        justify-content: center;
+        height: 32px;
+
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+
+        &_active {
+            path {
+                fill: $primary;
+            }
+        }
+
+        &:hover {
+            path {
+                fill: $primary;
+            }
+        }
+    }
+
+    &__title {
+        transform: translateX(500px);
+        opacity: 0;
+        transition: $transition-1 transform;
+    }
+
+    &__notifications {
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,120 @@
+.headerbar {
+    background-color: $card-bg-default;
+    box-shadow: $card-shadow;
+    width: 100%;
+    padding: $padding-small $padding-normal;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border-bottom: $card-border;
+    position: fixed;
+    top: 0;
+    padding-left: calc(#{$nav-width-collapsed} + #{$padding-normal});
+    transition: $transition-1;
+    z-index: 999;
+    align-items: center;
+
+    @include size-md {
+        padding: $padding-small $padding-default;
+        padding-left: $padding-default;
+    }
+
+    &__logo {
+        height: 32px;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+
+        @include size-md {
+            width: 60px;
+        }
+    }
+
+    &__notifications {
+        margin-right: $padding-normal;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+    }
+
+    &_topbar {
+        top: 143px;
+    }
+
+    &_collapsed {
+        padding-left: calc(#{$nav-width-expanded} + #{$padding-normal});
+
+        @include size-md {
+            padding-left: $padding-default;
+        }
+    }
+
+    &__search-input {
+        width: $headerbar-search-width;
+
+        @include size-md {
+            width: auto;
+        }
+    }
+
+    &__item {
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+    &__toggle {
+        svg {
+            height: 40px;
+            position: relative;
+            top: 2px;
+
+            path {
+                fill: none;
+                transition: stroke-dashoffset $transition-3,
+                    stroke-dasharray $transition-3;
+                stroke-width: 8px;
+                stroke-linecap: round;
+                stroke: $text-grey-light;
+                stroke-dashoffset: -20px;
+                &#top,
+                &#bottom,
+                &#middle {
+                    stroke-dasharray: 60px 300px;
+                }
+            }
+        }
+
+        &.arrow path {
+            &#top,
+            &#bottom {
+                stroke-dasharray: 25px 300px;
+                stroke-dashoffset: -230px;
+            }
+        }
+        cursor: pointer;
+    }
+
+    &__button {
+        background: transparent;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        color: $quick-silver;
+        font-size: $headerbar-button-size;
+
+        &:hover {
+            cursor: pointer;
+            background: $ghost-white;
+        }
+    }
+}

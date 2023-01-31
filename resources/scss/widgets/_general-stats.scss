@@ -1,0 +1,133 @@
+.general-stats {
+    padding: $padding-max $padding-normal;
+    height: 100%;
+
+    @include size-md {
+        padding: $padding-default;
+    }
+
+    &__btn {
+        display: none;
+
+        @include size-md {
+            display: flex;
+            width: 100%;
+            margin-top: 32px;
+            line-height: 19px;
+            font-weight: 500;
+        }
+    }
+
+    &__toggle {
+        font-size: 24px;
+        margin-top: $padding-default;
+        color: $text-grey-light;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    &_gradient {
+        background: $primary-gradient;
+
+        .general-stats {
+            &__title {
+                color: $white;
+            }
+
+            &__subtitle {
+                color: $white;
+            }
+
+            &__data {
+                &-icon {
+                    color: $white;
+                }
+
+                &-title {
+                    color: $white;
+                }
+
+                &-subtitle {
+                    color: rgba($white, 0.75);
+                }
+            }
+        }
+    }
+
+    &__divider {
+        width: calc(100% - 56px);
+        height: 1px;
+        background-color: $platinum;
+        margin: 40px auto;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: $font-size-max;
+        margin-bottom: $padding-default;
+        font-weight: $font-weight-light;
+        width: 100%;
+
+        @include size-md {
+            padding-top: 32px;
+            font-size: 48px;
+        }
+    }
+
+    &__subtitle {
+        text-align: center;
+        font-size: $font-size-sm;
+        color: $text-grey-light;
+        font-weight: $font-weight-semi-bold;
+        width: 100%;
+    }
+
+    &__data {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0px 40px;
+        grid-column-gap: 20%;
+        grid-row-gap: $padding-medium;
+
+        @include size-md {
+            grid-row-gap: $padding-normal;
+        }
+
+        @include size-md {
+            grid-column-gap: 0%;
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        &-symbol {
+            font-size: 8px;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        &-icon {
+            color: $text-grey-light;
+            margin-right: $padding-micro;
+            font-size: $font-size-base;
+        }
+
+        &-title {
+            font-weight: 500;
+            font-size: $font-size-md;
+            line-height: 21px;
+            margin-bottom: $padding-xxs;
+        }
+
+        &-subtitle {
+            font-size: $font-size-xs;
+            line-height: 14px;
+            color: $text-grey-light;
+        }
+    }
+}

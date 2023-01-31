@@ -1,0 +1,21 @@
+.nodes-info-card {
+    .card__header {
+        padding: 0;
+        margin-bottom: $padding-default;
+    }
+
+    &__chart {
+        width: 100%;
+        height: 350px;
+
+        @include size-md {
+            height: 475px;
+        }
+    }
+
+    &__footer {
+        margin-top: $padding-normal;
+        padding-top: $padding-normal;
+        border-top: $card-border;
+    }
+}

@@ -1,0 +1,56 @@
+.node-card-mobile {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__label {
+        font-size: $font-size-xs;
+        padding: 8px;
+        color: $primary;
+        background-color: $primary-ghost;
+        border-radius: 3px;
+    }
+
+    &__body {
+        margin: 16px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &__addr {
+        margin-right: 8px;
+    }
+
+    &__copy {
+        color: $primary;
+        font-size: $font-size-xs;
+        transition: $transition-1;
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+    }
+
+    &__stats {
+        font-size: $font-size-xs;
+        color: $text-grey-light;
+        margin-left: $padding-normal;
+        display: flex;
+        align-items: center;
+
+        @include size-xss {
+            font-size: 10px;
+        }
+    }
+
+    &__icon {
+        padding-right: 4px;
+    }
+}

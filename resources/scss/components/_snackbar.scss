@@ -1,0 +1,104 @@
+.vue-notification-wrapper {
+    &:not(:last-child) {
+        margin-bottom: $padding-default;
+    }
+}
+
+.fade-bottom-enter-active,
+.fade-bottom-leave-active,
+.fade-bottom-move {
+    transition: all 0.5s;
+}
+.fade-bottom-enter,
+.fade-bottom-leave-to {
+    opacity: 0;
+    transform: translateY(68px) scale(0.8);
+}
+
+.snackbar {
+    position: fixed;
+    padding-bottom: $padding-default;
+    z-index: 100;
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #0e0e2c;
+        opacity: 0.85;
+        box-shadow: 0 48px 100px rgba(17, 12, 46, 0.08);
+        border-radius: $br-sm;
+        color: $white;
+        padding: $padding-normal $padding-normal $padding-normal 32px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: $primary;
+            height: 100%;
+            width: 8px;
+        }
+
+        &_type {
+            &_error {
+                &::before {
+                    background: $error;
+                }
+            }
+
+            &_success {
+                &::before {
+                    background: $success;
+                }
+            }
+        }
+    }
+
+    &__text {
+        font-weight: $font-weight-semi-bold;
+        font-size: $font-size-sm;
+        line-height: 140%;
+    }
+
+    &__close {
+        cursor: pointer;
+        transition: $transition-1;
+        margin-left: $padding-default;
+        position: relative;
+        height: 20px;
+        width: 20px;
+
+        &-icon {
+            height: 20px;
+            width: 20px;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 36px;
+            height: 36px;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: $transition-1;
+        }
+
+        &:hover {
+            &::before {
+                background: rgba($white, 0.2);
+            }
+        }
+
+        path {
+            fill: $white;
+        }
+    }
+}

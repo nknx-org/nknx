@@ -1,0 +1,140 @@
+.wallet-panel {
+    padding: $padding-normal $padding-normal $padding-normal $padding-medium;
+    background: $walletpanel-bg;
+    color: $walletpanel-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+
+    @include size-md {
+        padding: $padding-default;
+    }
+
+    @include size-lg {
+        flex-flow: row wrap;
+    }
+
+    &__label {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semi-bold;
+        opacity: 0.75;
+        line-height: 18px;
+
+        @include size-md {
+            font-size: $font-size-xs;
+        }
+    }
+
+    &__value {
+        font-size: 38px;
+        margin: 4px 0px;
+        line-height: normal;
+
+        @include size-md {
+            margin: 8px 0 $padding-default 0;
+            font-size: $font-size-title;
+        }
+    }
+
+    &__currency {
+        font-size: 14px;
+        font-weight: $font-weight-semi-bold;
+
+        @include size-md {
+            font-size: $font-size-xs;
+        }
+    }
+
+    &__copy {
+        width: 16px;
+        transition: $transition-1;
+        margin-left: $padding-xs;
+
+        path {
+            fill: $white;
+        }
+    }
+
+    &__address {
+        font-size: 14px;
+        line-height: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        @include size-md {
+            font-size: $font-size-xs;
+        }
+
+        @media (max-width: 400px) {
+            font-size: 10px;
+        }
+
+        &:hover {
+            svg {
+                transform: translateX(5px);
+            }
+        }
+    }
+
+    &__button {
+        width: $walletpanel-btn-width;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column wrap;
+        background: $walletpanel-btn-bg;
+        border-radius: $card-border-radius;
+        cursor: pointer;
+        transition: $transition-1;
+        font-size: $font-size-sm;
+        line-height: 19px;
+        padding: $padding-normal 0;
+
+        &:hover {
+            background: $walletpanel-btn-hover-bg;
+        }
+
+        &:active {
+            background: $walletpanel-btn-active-bg;
+        }
+
+        @include size-md {
+            margin-top: $padding-default;
+            padding: $padding-default;
+            width: 100%;
+            flex-flow: row wrap;
+            font-size: 13px;
+        }
+    }
+
+    &__qr {
+        width: 24px;
+        margin-bottom: 8px;
+
+        @include size-md {
+            width: 20px;
+            margin-bottom: 0;
+            margin-right: 8px;
+        }
+    }
+
+    &__icon {
+        font-size: $walletpanel-icon-size;
+        line-height: normal;
+        margin-bottom: 10px;
+
+        @include size-md {
+            font-size: 18px;
+            margin-bottom: 0;
+            margin-right: 8px;
+        }
+
+        &_more {
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+    }
+}

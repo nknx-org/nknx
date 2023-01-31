@@ -1,0 +1,45 @@
+.modal-wrapper {
+    overflow: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: block;
+    background: rgba(92, 92, 92, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+
+    &__container {
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        padding: $padding-medium;
+        box-sizing: border-box;
+
+        @include size-md {
+            align-items: flex-end;
+            padding: 0;
+
+            .modal-card {
+                width: 100%;
+                margin: 0;
+                border-radius: 24px 24px 0 0;
+                padding: $padding-normal $padding-default;
+            }
+        }
+    }
+}
+
+.modal-wrapper-enter-active,
+.modal-wrapper-leave-active {
+    transition: $transition-1;
+}
+
+.modal-wrapper-enter,
+.modal-wrapper-leave-to {
+    opacity: 0;
+}

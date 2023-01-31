@@ -1,0 +1,26 @@
+.modal-content {
+    margin-top: $padding-normal;
+
+    &__body {
+        display: grid;
+        grid-gap: $padding-default $padding-default;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    &__footer {
+        padding-top: $padding-normal;
+        border-top: $card-border;
+        display: flex;
+        justify-content: flex-end;
+
+        .button {
+            &:not(:last-child) {
+                margin-right: $padding-normal;
+            }
+        }
+
+        &_margin {
+            margin-top: $padding-normal;
+        }
+    }
+}

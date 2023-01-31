@@ -1,0 +1,157 @@
+.popover {
+    box-shadow: $shadow-3;
+    outline: none;
+    border-radius: $br-md !important;
+    z-index: 98;
+
+    &-more {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-icon {
+            width: 18px;
+
+            &_horizontal {
+                width: 24px;
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 32px;
+            height: 32px;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: $transition-1;
+        }
+
+        &:hover {
+            &::before {
+                background: $primary-light;
+            }
+        }
+    }
+
+    &_actions {
+        min-width: 136px;
+    }
+
+    &__actions {
+        padding: 12px $padding-default;
+
+        &-icon {
+            width: 16px;
+            margin-right: 4px;
+
+            path {
+                fill: $grey;
+            }
+        }
+
+        &-item {
+            color: $grey;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            box-sizing: border-box;
+            transition: color $transition-1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-bottom: $padding-xs;
+            }
+
+            &:hover {
+                color: $primary;
+
+                path {
+                    fill: $primary;
+                }
+            }
+        }
+    }
+
+    &-inner {
+        background: $white !important;
+        color: $grey !important;
+        border-radius: $br-md !important;
+        padding: 0 !important;
+    }
+
+    &-arrow {
+        display: none;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $padding-normal $padding-normal $padding-default
+            $padding-normal;
+        border-bottom: $card-border;
+    }
+
+    &__close {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: $transition-1;
+        }
+
+        &:hover {
+            &::before {
+                background: $primary-light;
+            }
+        }
+
+        &-icon {
+            height: 24px;
+            width: 24px;
+        }
+    }
+
+    &__content {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        padding: 12px;
+    }
+
+    &__item {
+        &_counter {
+            color: $primary;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: $padding-default;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+    }
+}

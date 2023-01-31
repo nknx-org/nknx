@@ -1,0 +1,60 @@
+.modal-card {
+    width: 532px;
+
+    &__divider {
+        padding: $padding-default;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: $card-border;
+        border-bottom: $card-border;
+        grid-column: span 6;
+    }
+
+    &__close {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            height: 32px;
+            z-index: 1;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: $transition-1;
+        }
+
+        &:hover {
+            &::before {
+                background: $primary-ghost;
+            }
+        }
+    }
+
+    &__descr {
+        grid-column: span 6;
+        line-height: 140%;
+    }
+}
+
+.modal-enter-active,
+.modal-leave-active {
+    transition: $transition-2;
+}
+.modal-enter,
+.modal-leave-to {
+    transform: translate(0, -25%);
+    opacity: 0;
+}

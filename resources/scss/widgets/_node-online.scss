@@ -1,0 +1,25 @@
+.node-online {
+    display: flex;
+    align-items: center;
+
+    &__title {
+        margin-left: $padding-default;
+        color: $grey;
+        font-size: $font-size-sm;
+    }
+
+    &__status {
+        border-radius: 100%;
+        height: 8px;
+        display: inline-block;
+        width: 8px;
+
+        &_positive {
+            background: $success;
+        }
+
+        &_negative {
+            background: $error;
+        }
+    }
+}

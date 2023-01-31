@@ -1,0 +1,103 @@
+.wallet-card {
+    @include size-md {
+        min-width: 260px;
+        margin-right: $padding-default;
+    }
+
+    &__grid {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 64px 1fr;
+        position: relative;
+    }
+
+    &__icon {
+        height: 64px;
+        width: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #eef0fc;
+        border-radius: 100%;
+
+        svg {
+            width: 18px;
+        }
+    }
+
+    &__data {
+    }
+
+    &__header {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr 40px;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 15px;
+        line-height: 19px;
+        color: #a2a5b9;
+    }
+
+    &__balance {
+        margin-top: 8px;
+        margin-bottom: 12px;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 33px;
+        color: #4a4d5d;
+
+        @include size-md {
+            font-size: 18px;
+        }
+    }
+
+    &__currency {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #4a4d5d;
+    }
+
+    &__price {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        color: #a2a5b9;
+    }
+
+    &__actions {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-icon {
+            width: 24px;
+            position: relative;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: $transition-1;
+        }
+
+        &:hover {
+            &::before {
+                background: $primary-ghost;
+            }
+        }
+    }
+}

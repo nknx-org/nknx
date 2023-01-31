@@ -1,0 +1,91 @@
+.tabs {
+    grid-column: span 6;
+
+    &__control {
+        margin-right: $padding-medium;
+        flex-shrink: 0;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: $padding-default;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: $padding-xs;
+
+        &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: $platinum;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        color: #aaadb2;
+        transition: $transition-1;
+        flex-shrink: 0;
+        position: relative;
+
+        &_type {
+            &_page {
+                font-size: $font-size-widget;
+            }
+        }
+
+        &:after {
+            transition: $transition-1;
+            content: "";
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            left: 0;
+            bottom: -8px;
+            background: $primary;
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+
+        &_active {
+            border-color: $primary;
+            color: $darker;
+
+            &:after {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            path {
+                fill: $darker !important;
+            }
+        }
+
+        &:hover {
+            border-color: $primary;
+            color: $darker;
+        }
+    }
+}

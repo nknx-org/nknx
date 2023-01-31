@@ -1,0 +1,165 @@
+.card {
+    background: $card-bg-default;
+    border-radius: $card-border-radius;
+    box-sizing: border-box;
+    box-shadow: $card-shadow;
+    position: relative;
+
+    &__header {
+        padding: $padding-normal;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &_padding {
+            padding-right: 116px !important;
+        }
+
+        &_border {
+            padding: 0;
+            padding-bottom: calc(#{$padding-normal} + 1px);
+
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 1px;
+                width: calc(100% + 24px * 2);
+                background: $platinum;
+                bottom: 0;
+                left: -24px;
+            }
+
+            @include size-llg {
+                padding: 0 !important;
+                padding-bottom: 16px !important;
+            }
+        }
+
+        @include size-md {
+            padding: $padding-default;
+        }
+
+        &_modal {
+            padding: 0;
+            margin-bottom: $padding-medium;
+
+            @include size-md {
+                padding: 0;
+                margin-bottom: 0px;
+            }
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__navigation {
+            margin-right: $padding-default;
+            padding-right: $padding-default;
+            border-right: $card-border;
+        }
+
+        &__viewAll {
+            text-align: right;
+            color: $primary;
+            font-size: $font-size-sm;
+            cursor: pointer;
+            transition: $transition-1;
+            text-decoration: none;
+
+            @include size-md {
+                display: none;
+            }
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        &-controls {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            .button {
+                &:not(:last-child) {
+                    margin-right: $padding-default;
+                }
+            }
+        }
+    }
+
+    &_overflow {
+        overflow: hidden;
+    }
+
+    &_padding {
+        &_normal {
+            padding: $padding-normal;
+
+            @include size-md {
+                padding: $padding-default;
+            }
+        }
+
+        &_medium {
+            padding: $padding-medium;
+
+            @include size-md {
+                padding: $padding-default;
+            }
+        }
+
+        &_none {
+            padding: 0;
+        }
+    }
+
+    &_hover {
+        cursor: pointer;
+        transition: $transition-1;
+
+        &:hover {
+            box-shadow: $shadow-3;
+        }
+    }
+
+    &__title {
+        &_modal {
+            line-height: 29px;
+            letter-spacing: 0.03em;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 8px;
+            word-break: break-all;
+            margin-right: $padding-normal;
+
+            @include size-md {
+                font-size: 18px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 4px;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 140%;
+        color: $primary;
+        display: flex;
+        align-items: center;
+    }
+
+    &__counter {
+        font-weight: 500;
+        font-size: $font-size-sm;
+        line-height: 140%;
+        color: rgba(74, 74, 104, 0.3);
+        margin-left: $padding-default;
+    }
+}

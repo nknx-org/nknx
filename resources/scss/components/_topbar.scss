@@ -1,0 +1,117 @@
+.topbar {
+    height: $topbar-height;
+    color: $white;
+    background-color: $secondary;
+    width: 100%;
+    padding: 0px $padding-normal;
+    display: flex;
+    align-items: center;
+    font-size: 0.7em;
+    box-sizing: border-box;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 10;
+
+    &__left {
+      display: flex;
+    }
+
+    &__right {
+      display: flex;
+    }
+
+    &__block {
+      margin-right: 50px;
+      display: flex;
+      align-items: center;
+
+      &_positive {
+        margin-left: 5px;
+        color: $success;
+      }
+
+      &_negative {
+        margin-left: 5px;
+        color: $error;
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    &__status {
+      display: block;
+      width: 0.75em;
+      height: 0.75em;
+      border-radius: 50%;
+      margin-right: 5px;
+
+      &_positive {
+        background-color: $success;
+      }
+
+      &_warning {
+        background-color: $error;
+      }
+
+      &_error {
+        background-color: $error;
+      }
+    }
+
+    &__icon {
+      height: 1em;
+      margin-right: 8px;
+    }
+
+    &-mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-flow: row wrap;
+      color: $white;
+      background-color: $secondary;
+      font-size: $font-size-xs;
+      box-sizing: border-box;
+      position: fixed;
+      z-index: 10;
+      width: 100%;
+      padding: 8px $padding-default;
+
+      &__left {
+        display: flex;
+        align-items: center;
+        transition: $transition-1;
+
+        &_hidden {
+          color: transparent;
+        }
+      }
+
+      &__toggle {
+        font-size: $font-size-md;
+        width: 65px;
+        text-align: right;
+        cursor: pointer;
+      }
+
+      &__list {
+        width: 100%;
+        max-height: 0px;
+        transition: $transition-1;
+        color: transparent;
+
+        &_open {
+          margin-top: $padding-default;
+          color: inherit;
+          max-height: unset;
+        }
+
+        &-item {
+          font-size: $font-size-xs;
+          margin-bottom: $padding-default;
+        }
+      }
+    }
+  }
